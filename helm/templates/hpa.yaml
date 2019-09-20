@@ -1,0 +1,15 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: guestbook-api-hpa
+  namespace: guestbook-ns
+  labels: 
+    app: guestbook-api
+spec:
+  maxReplicas: 10
+  minReplicas: 2
+  scaleTargetRef:
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    name: guestbook-api-deployment
+  targetCPUUtilizationPercentage: 80

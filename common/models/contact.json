@@ -1,0 +1,29 @@
+{
+  "name": "Contact",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "addresses": {
+      "type": "hasOne",
+      "model": "Address",
+      "foreignKey": "addressId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

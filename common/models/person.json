@@ -1,0 +1,37 @@
+{
+  "name": "Person",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "messages": {
+      "type": "hasMany",
+      "model": "Message",
+      "foreignKey": "messageId"
+    },
+    "contacts": {
+      "type": "hasOne",
+      "model": "Contact",
+      "foreignKey": "contactId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
